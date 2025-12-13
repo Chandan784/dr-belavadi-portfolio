@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Home,
@@ -15,28 +15,32 @@ import {
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "auto";
+  }, [open]);
+
   const menuItems = [
-    { label: "Home", href: "#hero", icon: <Home size={20} /> },
-    { label: "About", href: "#about", icon: <User size={20} /> },
-    { label: "Services", href: "#services", icon: <Stethoscope size={20} /> },
+    { label: "Home", href: "#hero", icon: <Home size={18} /> },
+    { label: "About", href: "#about", icon: <User size={18} /> },
+    { label: "Services", href: "#services", icon: <Stethoscope size={18} /> },
     {
       label: "Experience",
       href: "#experience",
-      icon: <GraduationCap size={20} />,
+      icon: <GraduationCap size={18} />,
     },
-    { label: "FAQ", href: "#faq", icon: <HelpCircle size={20} /> },
-    { label: "Contact", href: "#contact", icon: <Phone size={20} /> },
+    { label: "FAQ", href: "#faq", icon: <HelpCircle size={18} /> },
+    { label: "Contact", href: "#contact", icon: <Phone size={18} /> },
   ];
 
   return (
     <>
       {/* NAVBAR */}
-      <nav className="fixed top-0 left-0 w-full bg-white shadow-md z-50 px-6 py-4 flex items-center justify-between">
+      <nav className="fixed top-0 left-0 w-full h-16 bg-white z-50 shadow-sm px-5 flex items-center justify-between overflow-x-hidden">
         {/* Logo */}
         <motion.div
-          initial={{ opacity: 0, y: -10 }}
+          initial={{ opacity: 0, y: -6 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-sm lg:textlg font-bold text-blue-600"
+          className="text-lg font-semibold text-blue-600 whitespace-nowrap"
         >
           Dr. Prashanth Belavadi
         </motion.div>
@@ -58,10 +62,10 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-gray-700"
+          className="md:hidden flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100"
           onClick={() => setOpen(true)}
         >
-          <Menu size={28} />
+          <Menu size={26} />
         </button>
       </nav>
 
@@ -69,39 +73,44 @@ export default function Navbar() {
       <AnimatePresence>
         {open && (
           <>
-            {/* Background Overlay */}
+            {/* Overlay */}
             <motion.div
               initial={{ opacity: 0 }}
-              animate={{ opacity: 0.5 }}
+              animate={{ opacity: 0.4 }}
               exit={{ opacity: 0 }}
-              onClick={() => setOpen(false)}
               className="fixed inset-0 bg-black z-40"
+              onClick={() => setOpen(false)}
             />
 
             {/* Drawer */}
-            <motion.div
+            <motion.aside
               initial={{ x: "-100%" }}
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
-              transition={{ type: "spring", damping: 20, stiffness: 120 }}
-              className="fixed left-0 top-0 w-[75%] h-full bg-white shadow-xl z-50 p-6 flex flex-col"
+              transition={{ type: "spring", stiffness: 260, damping: 30 }}
+              className="fixed top-0 left-0 h-full w-[75%] max-w-[320px] bg-white z-50 p-6 overflow-y-auto"
             >
               {/* Drawer Header */}
-              <div className="flex items-center justify-between mb-6">
-                <h2 className="text-xl font-bold text-blue-600">Menu</h2>
-                <button onClick={() => setOpen(false)}>
-                  <X size={26} />
+              <div className="flex items-center justify-between mb-8">
+                <span className="text-lg font-semibold text-blue-600">
+                  Menu
+                </span>
+                <button
+                  onClick={() => setOpen(false)}
+                  className="p-2 rounded-full hover:bg-gray-100"
+                >
+                  <X size={22} />
                 </button>
               </div>
 
-              {/* Drawer Menu Items */}
+              {/* Menu Items */}
               <ul className="flex flex-col gap-6 text-gray-800 font-medium">
                 {menuItems.map((item) => (
                   <li key={item.label}>
                     <a
                       href={item.href}
                       onClick={() => setOpen(false)}
-                      className="flex items-center gap-3 text-lg hover:text-blue-600"
+                      className="flex items-center gap-3 text-base hover:text-blue-600"
                     >
                       {item.icon}
                       {item.label}
@@ -109,7 +118,7 @@ export default function Navbar() {
                   </li>
                 ))}
               </ul>
-            </motion.div>
+            </motion.aside>
           </>
         )}
       </AnimatePresence>
