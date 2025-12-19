@@ -1,6 +1,8 @@
 import AboutSection from "@/components/AboutSection";
 import Achievements from "@/components/Achivemnts";
 import ContactSection from "@/components/ContactSection";
+import Education from "@/components/Education";
+import Experience from "@/components/Experience";
 import Footer from "@/components/Footer";
 import GallerySection from "@/components/GallerySection";
 import GetInTouch from "@/components/GetInTouch";
@@ -21,6 +23,8 @@ function Home() {
       <WhatIDo />
       <HealingSecrets />
       <AboutSection />
+      <Education />
+      <Experience />
       <Achievements />
       <GetInTouch />
       <ContactSection />

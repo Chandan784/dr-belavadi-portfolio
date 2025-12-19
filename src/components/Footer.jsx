@@ -17,12 +17,12 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative bg-gradient-to-r from-blue-900 via-indigo-900 to-purple-900 text-white py-16 px-6">
+    <footer className="relative bg-indigo-600 text-white py-16 px-6 overflow-hidden">
       {/* Decorative Circles */}
       <div className="absolute top-[-60px] left-[-60px] w-48 h-48 rounded-full bg-white/10 filter blur-3xl animate-pulse"></div>
       <div className="absolute bottom-[-80px] right-[-80px] w-72 h-72 rounded-full bg-white/10 filter blur-3xl animate-pulse"></div>
 
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12 relative z-10">
         {/* Logo & Description */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -34,7 +34,7 @@ export default function Footer() {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Dr. Prashanth Belavadi
           </h2>
-          <p className="text-gray-300 text-lg">
+          <p className="text-gray-100 text-lg">
             Ayurveda's Maverick — Blending ancient Indian healing with modern
             healthcare.
           </p>
@@ -54,7 +54,7 @@ export default function Footer() {
               <li key={i}>
                 <a
                   href={link.href}
-                  className="hover:text-blue-400 transition-colors"
+                  className="hover:text-yellow-300 transition-colors"
                 >
                   {link.name}
                 </a>
@@ -74,15 +74,16 @@ export default function Footer() {
           <h3 className="text-xl font-semibold mb-2">Follow Me</h3>
           <div className="flex gap-4">
             {socials.map((social, i) => (
-              <a
+              <motion.a
                 key={i}
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white/20 p-3 rounded-full hover:bg-white/30 transition-transform transform hover:scale-110"
+                whileHover={{ scale: 1.2, rotate: 10 }}
+                className="bg-white text-indigo-600 p-3 rounded-full hover:bg-yellow-300 hover:text-white transition-all"
               >
                 {social.icon}
-              </a>
+              </motion.a>
             ))}
           </div>
         </motion.div>
@@ -94,10 +95,13 @@ export default function Footer() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, delay: 0.6 }}
-        className="mt-12 text-center text-gray-400 text-sm"
+        className="mt-12 text-center text-gray-200 text-sm relative z-10 space-y-1"
       >
-        © {new Date().getFullYear()} Dr. Prashanth Belavadi. All rights
-        reserved.
+        <div>
+          © {new Date().getFullYear()} Dr. Prashanth Belavadi. All rights
+          reserved.
+        </div>
+        <div>Developed by Applute Technologies Private Limited</div>
       </motion.div>
     </footer>
   );
