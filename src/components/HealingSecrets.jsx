@@ -1,10 +1,12 @@
 "use client";
 import { motion } from "framer-motion";
+import { embed } from "framer-motion/client";
 
 const videos = [
   { embed: "https://www.youtube.com/embed/-i9ZgG9SFG4?si=z0eU1jX2XTDejAAv" },
   { embed: "https://www.youtube.com/embed/JpWVsoPjfY4?si=zRyDVWWlBAt0laF5" },
   { embed: "https://www.youtube.com/embed/-4kwHSbksgw?si=kqa3QoxMyTau0ShW" },
+  { embed: "https://www.youtube.com/embed/U5V8QH_iDi8?si=XFibqEcLUAs43ABu" },
 ];
 
 export default function HealingSecrets() {
