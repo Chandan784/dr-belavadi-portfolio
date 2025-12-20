@@ -11,6 +11,11 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+export const metadata = {
+  title: "Dr. Prashanth Belavadi | Ayurveda & Healthcare",
+  description:
+    "Dr. Prashanth Belavadi is an Ayurveda & healthcare expert blending ancient Indian medicine with modern healthcare solutions.",
+};
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
