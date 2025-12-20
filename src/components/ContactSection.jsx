@@ -17,7 +17,7 @@ export default function ContactSection() {
     {
       icon: MapPin,
       title: "Address",
-      value: "Medfine Hospitals, BTM Layout 1st Stage, Bangalore",
+      value: "Guna ayur clinics, Manikonda, Hyderabad",
     },
   ];
 
