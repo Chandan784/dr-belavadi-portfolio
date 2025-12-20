@@ -23,7 +23,7 @@ export default function AboutSection() {
           className="text-center max-w-3xl mx-auto mb-8"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-            About Dr. N. Prashanth Belavadi
+            About Dr. Prashanth Belavadi
           </h2>
           <div className="w-14 h-1 bg-indigo-600 mx-auto mt-2 rounded-full" />
         </motion.div>
@@ -60,7 +60,7 @@ export default function AboutSection() {
           className="space-y-4 text-center max-w-4xl"
         >
           <p className="text-lg md:text-xl leading-relaxed text-gray-700">
-            Dr. N. Prashanth Belavadi stands at the forefront of integrative
+            Dr. Prashanth Belavadi stands at the forefront of integrative
             healthcare, combining over 10 years of dedicated Ayurvedic practice
             with nearly two decades of hospital administration excellence. His
             approach blends classical Ayurvedic wisdom with modern healthcare
