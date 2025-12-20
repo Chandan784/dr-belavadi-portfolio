@@ -17,7 +17,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative bg-indigo-600 text-white py-16 px-6 overflow-hidden">
+    <footer className="relative bg-indigo-900 text-white py-16 px-6 overflow-hidden">
       {/* Decorative Circles */}
       <div className="absolute top-[-60px] left-[-60px] w-48 h-48 rounded-full bg-white/10 filter blur-3xl animate-pulse"></div>
       <div className="absolute bottom-[-80px] right-[-80px] w-72 h-72 rounded-full bg-white/10 filter blur-3xl animate-pulse"></div>
@@ -38,29 +38,6 @@ export default function Footer() {
             Ayurveda's Maverick — Blending ancient Indian healing with modern
             healthcare.
           </p>
-        </motion.div>
-
-        {/* Quick Links */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex-1 flex flex-col gap-3"
-        >
-          <h3 className="text-xl font-semibold mb-2">Quick Links</h3>
-          <ul className="flex flex-col gap-2">
-            {links.map((link, i) => (
-              <li key={i}>
-                <a
-                  href={link.href}
-                  className="hover:text-yellow-300 transition-colors"
-                >
-                  {link.name}
-                </a>
-              </li>
-            ))}
-          </ul>
         </motion.div>
 
         {/* Social Icons */}

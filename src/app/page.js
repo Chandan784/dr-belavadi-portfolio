@@ -8,6 +8,7 @@ import GallerySection from "@/components/GallerySection";
 import GetInTouch from "@/components/GetInTouch";
 import HealingSecrets from "@/components/HealingSecrets";
 import Hero from "@/components/HeroSection";
+import MyProducts from "@/components/MyProduct";
 import MyVentures from "@/components/MyVentureSection";
 import Navbar from "@/components/Navbar";
 import WhatIDo from "@/components/WhatIDo";
@@ -21,6 +22,7 @@ function Home() {
       <MyVentures />
       <GallerySection />
       <WhatIDo />
+      <MyProducts />
       <HealingSecrets />
       <AboutSection />
       <Education />

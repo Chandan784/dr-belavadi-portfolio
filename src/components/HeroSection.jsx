@@ -25,21 +25,14 @@ export default function Hero() {
           {/* CTA Buttons */}
           <div className="flex gap-4 mt-4 flex-col sm:flex-row">
             <motion.a
-              href="#appointment"
+              href="https://wa.me/918496973301" // replace with your number
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-indigo-600 text-white font-semibold px-8 py-3 rounded-full shadow-md hover:bg-indigo-700 transition text-center"
             >
               Book Appointment
-            </motion.a>
-
-            <motion.a
-              href="#about"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="border border-indigo-600 text-indigo-600 font-semibold px-8 py-3 rounded-full hover:bg-indigo-50 transition text-center"
-            >
-              Learn More
             </motion.a>
           </div>
         </motion.div>
